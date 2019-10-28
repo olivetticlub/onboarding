@@ -1,21 +1,22 @@
 <template>
   <div class="q-gutter-md row">
     <q-input
-      v-model.number="coupon.count"
       @input="handleInput"
-      label="Disponibilità"
-      type="number"
-      filled
       class="col-2"
+      filled
+      label="Disponibilità"
+      min=0
+      type="number"
+      v-model.number="coupon.count"
       />
 
     <q-input
-      v-model="coupon.description"
       @input="handleInput"
+      class="col-grow"
+      filled
       label="Descrizione"
       type="text"
-      filled
-      class="col-grow"
+      v-model="coupon.description"
       />
   </div>
 </template>
