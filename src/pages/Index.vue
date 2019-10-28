@@ -82,7 +82,7 @@
             label="Disponibilità"
             type="number"
             filled
-            class="col-1"
+            class="col-2"
             />
 
           <q-input
