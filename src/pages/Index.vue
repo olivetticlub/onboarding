@@ -122,6 +122,17 @@
         :header-nav="step > 3"
         >
 
+        <h3>Conferma i tuoi dati</h3>
+        <p><strong>Nome attività</strong>: {{ name }}</p>
+        <p><strong>Indirizzo</strong>: {{ address }}</p>
+        <p><strong>Codice ATECO</strong>: {{ ateco }}</p>
+        <p><strong>Partita IVA</strong>: {{ vatNumber }}</p>
+
+        <h4>I tuoi coupon</h4>
+        <div v-for="coupon in coupons" :key="coupon.description">
+          <p><strong>{{ coupon.count }}x</strong> {{ coupon.description }}</p>
+        </div>
+
         <q-stepper-navigation>
           <q-btn color="primary" @click="done3 = true" label="Finish" />
             <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />

@@ -35,8 +35,8 @@ export default {
     event: 'input'
   },
   methods: {
-    handleInput (value) {
-      this.$emit('input', value)
+    handleInput () {
+      this.$emit('input', this.coupon)
     }
   }
 }
