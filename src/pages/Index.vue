@@ -15,41 +15,50 @@
         :header-nav="step > 1"
         >
 
-        <q-form class="q-gutter-md">
-          <q-input
-            filled
-            v-model="name"
-            label="Nome attività"
-            hint="es. Panificio da Gianni"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Inserisci il nome della tua attività']"
-            />
+        <q-form class="q-gutter-lg">
+          <div class="q-gutter-xl row justify-evenly">
+            <q-input
+            size="40"
+              filled
+              v-model="name"
+              label="Nome attività"
+              hint="es. Panificio da Gianni"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Inserisci il nome della tua attività']"
+              />
 
-          <q-input
-            filled
-            v-model="vatNumber"
-            label="Partita IVA"
-            hint="es. 09123456789"
-            lazy-rules
-            :rules="[ val => val !== null && val !== '' || 'Inserisci la tua partita IVA' ]"
-            />
+            <q-input
+            size="40"
+              filled
+              v-model="vatNumber"
+              label="Partita IVA"
+              hint="es. 09123456789"
+              lazy-rules
+              :rules="[ val => val !== null && val !== '' || 'Inserisci la tua partita IVA' ]"
+              />
+          </div>
 
-          <q-input
-            filled
-            v-model="address"
-            label="Indirizzo"
-            lazy-rules
-            :rules="[ val => val !== null && val !== '' || 'Inserisci il tuo indirizzo' ]"
-            />
+          <div class="q-gutter-xl row justify-evenly">
+            <q-input
+            size="40"
+              filled
+              v-model="address"
+              label="Indirizzo"
+              hint="via Verdi, 15"
+              lazy-rules
+              :rules="[ val => val !== null && val !== '' || 'Inserisci il tuo indirizzo' ]"
+              />
 
-          <q-input
-            filled
-            v-model="ateco"
-            label="Codice ATECO"
-            hint="es. 10.71.10"
-            lazy-rules
-            :rules="[ val => val !== null && val !== '' || 'Inserisci il tuo indirizzo' ]"
-            />
+            <q-input
+            size="40"
+              filled
+              v-model="ateco"
+              label="Codice ATECO"
+              hint="es. 10.71.10"
+              lazy-rules
+              :rules="[ val => val !== null && val !== '' || 'Inserisci il tuo indirizzo' ]"
+              />
+          </div>
 
         </q-form>
 
