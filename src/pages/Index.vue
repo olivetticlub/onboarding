@@ -70,33 +70,33 @@
         <div class="q-gutter-md row">
           <q-input
             v-model.number="couponCount"
+            label="Disponibilità"
             type="number"
             filled
-            style="max-width: 200px"
+            class="col-1"
             />
 
-            <q-input
-              v-model="couponDescription"
-              type="text"
-              filled
-              />
+          <q-input
+            v-model="couponDescription"
+            label="Descrizione"
+            type="text"
+            filled
+            class="col-grow"
+            />
         </div>
 
         <q-stepper-navigation>
-          <q-btn @click="() => { done2 = true; step = 3 }" color="primary" label="Continue" />
-        <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
+          <q-btn @click="() => { done2 = true; step = 3 }" color="primary" label="Procedi" />
+        <q-btn flat @click="step = 1" color="primary" label="Indietro" class="q-ml-sm" />
         </q-stepper-navigation>
       </q-step>
 
       <q-step
         :name="3"
-        title="Create an ad"
+        title="Conferma e registrati"
         icon="add_comment"
         :header-nav="step > 3"
         >
-        Try out different ad text to see what brings in the most customers, and learn how to
-        enhance your ads using features like ad extensions. If you run into any problems with
-        your ads, find out how to tell if they're running and how to resolve approval issues.
 
         <q-stepper-navigation>
           <q-btn color="primary" @click="done3 = true" label="Finish" />
@@ -117,7 +117,7 @@ export default {
       address: '',
       ateco: '',
       vatNumber: '',
-      couponCount: 1,
+      couponCount: 100,
       couponDescription: ''
     }
   }
