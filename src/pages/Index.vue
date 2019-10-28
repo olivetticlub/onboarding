@@ -7,6 +7,25 @@
       color="primary"
       animated
       >
+
+      <q-step
+        :name="0"
+        title="Benvenuto"
+        icon="settings"
+        :done="step > 0"
+        :header-nav="step > 0"
+        >
+
+        <q-form class="q-gutter-lg">
+          <h2>Benvenuto in Olivetti Club!</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem labore sequi delectus molestias distinctio explicabo optio odio autem rerum at!</p>
+        </q-form>
+
+        <q-stepper-navigation>
+          <q-btn @click="() => { done0 = true; step = 1 }" color="primary" label="Inizia" />
+        </q-stepper-navigation>
+      </q-step>
+
       <q-step
         :name="1"
         title="Informazioni sull'attività"
@@ -121,7 +140,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      step: 1,
+      step: 0,
       name: '',
       address: '',
       ateco: '',
