@@ -95,23 +95,19 @@
         :header-nav="step > 2"
         >
 
-        <div class="q-gutter-md row">
-          <q-input
-            v-model.number="couponCount"
-            label="Disponibilità"
-            type="number"
-            filled
-            class="col-2"
-            />
-
-          <q-input
-            v-model="couponDescription"
-            label="Descrizione"
-            type="text"
-            filled
-            class="col-grow"
-            />
+        <div v-for="idx in coupons.length" v-bind:key="idx">
+          <CouponField v-model="coupons[idx-1]" />
         </div>
+
+        <q-btn
+          @click="coupons.push({ count: 0, description: '' })"
+          label="Aggiungi"
+          />
+        <q-btn
+          @click="coupons.pop()"
+          color="red"
+          label="Rimuovi"
+          />
 
         <q-stepper-navigation>
           <q-btn @click="() => { done2 = true; step = 3 }" color="primary" label="Procedi" />
@@ -136,8 +132,11 @@
 </template>
 
 <script>
+import CouponField from '../components/CouponField'
+
 export default {
   name: 'PageIndex',
+  components: { CouponField },
   data () {
     return {
       step: 0,
@@ -145,8 +144,9 @@ export default {
       address: '',
       ateco: '',
       vatNumber: '',
-      couponCount: 100,
-      couponDescription: ''
+      coupons: [
+        { count: 0, description: '' }
+      ]
     }
   }
 }
