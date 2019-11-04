@@ -19,7 +19,7 @@
 
         <q-form class="q-gutter-lg">
           <h2>Benvenuto in Olivetti Club!</h2>
-          <p>Registra il tuo negozio e genera i coupon, così verranno distribuiti dagli altri commercianti e i loro clienti verranno a trovarti.</p>
+          <p class="text-body1 text-weight">Registra il tuo negozio e genera i coupon, così verranno distribuiti dagli altri commercianti e i loro clienti verranno a trovarti.</p>
         </q-form>
 
         <q-stepper-navigation>
@@ -35,7 +35,7 @@
         :header-nav="step > 1"
         >
 
-        <p class="text-body1 text-weight-medium">Inserisci i dati del tuo negozio, serviranno per farti conoscere alle persone più vicine a te.</p>
+        <p class="text-body1 text-weight-medium q-pb-md">Inserisci i dati del tuo negozio, serviranno per farti conoscere alle persone più vicine a te.</p>
 
         <q-form class="q-gutter-lg">
           <div class="row ">
@@ -135,8 +135,6 @@
         >
 
       <p class="text-body1 text-weight-medium">Controlla di aver inserito le informazioni corrette e manda i coupon ai membri del club! </p>
-
-        <h3>Conferma i tuoi dati</h3>
         <p><strong>Nome attività</strong>: {{ name }}</p>
         <p><strong>Indirizzo</strong>: {{ address }}</p>
         <p><strong>Codice ATECO</strong>: {{ ateco }}</p>
