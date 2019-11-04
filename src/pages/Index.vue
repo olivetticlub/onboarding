@@ -6,12 +6,13 @@
       ref="stepper"
       color="primary"
       animated
+      :contracted="$q.screen.lt.md"
       >
 
       <q-step
         :name="0"
         title="Benvenuto"
-        icon="settings"
+        icon="filter_1"
         :done="step > 0"
         :header-nav="step > 0"
         >
@@ -29,7 +30,7 @@
       <q-step
         :name="1"
         title="Informazioni sull'attività"
-        icon="settings"
+        icon="filter_2"
         :done="step > 1"
         :header-nav="step > 1"
         >
@@ -90,7 +91,7 @@
         :name="2"
         title="Crea i tuoi primi coupon"
         caption="Facoltativo"
-        icon="create_new_folder"
+        icon="filter_3"
         :done="step > 2"
         :header-nav="step > 2"
         >
@@ -118,7 +119,7 @@
       <q-step
         :name="3"
         title="Conferma e registrati"
-        icon="add_comment"
+        icon="filter_4"
         :header-nav="step > 3"
         >
 
