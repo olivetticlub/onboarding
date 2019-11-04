@@ -1,5 +1,5 @@
 <template>
-  <div class="q-gutter-md row">
+  <div class="q-gutter-md row q-pt-sm">
     <q-input
       @input="handleInput"
       class="col-2"

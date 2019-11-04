@@ -103,15 +103,18 @@
           <CouponField v-model="coupons[idx-1]" />
         </div>
 
-        <q-btn
-          @click="coupons.push({ count: 0, description: '' })"
-          label="Aggiungi"
-          />
-        <q-btn
-          @click="coupons.pop()"
-          color="red"
-          label="Rimuovi"
-          />
+        <div class="q-mt-md">
+          <q-btn
+            @click="coupons.push({ count: 0, description: '' })"
+            label="Aggiungi"
+            />
+
+          <q-btn
+            @click="coupons.pop()"
+            color="red"
+            label="Rimuovi"
+            />
+          </div>
 
         <q-stepper-navigation>
           <q-btn @click="() => { done2 = true; step = 3 }" color="primary" label="Procedi" />
