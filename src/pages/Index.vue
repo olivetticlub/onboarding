@@ -101,7 +101,7 @@
         :header-nav="step > 2"
         >
 
-        <p class="text-body1 text-weight-medium">Crea i tuoi coupon, scegli quanti distribuire e che valore hanno. Ad esempio "3 coupon per una bibita omaggio se compri una pizza"</p>
+        <p class="text-body1 text-weight-medium">Crea i tuoi coupon, scegli quanti distribuirne e che valore hanno. Ad esempio "3 coupon per una bibita omaggio se compri una pizza"</p>
 
         <div v-for="idx in coupons.length" v-bind:key="idx">
           <CouponField v-model="coupons[idx-1]" />
