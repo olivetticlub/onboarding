@@ -130,6 +130,7 @@
         :name="3"
         title="Conferma e registrati"
         icon="filter_4"
+        :done="step > 3"
         :header-nav="step > 3"
         >
 
@@ -147,9 +148,19 @@
         </div>
 
         <q-stepper-navigation>
-          <q-btn color="primary" @click="done3 = true" label="Finish" />
-            <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
+          <q-btn color="primary" @click="() => { done3 = true; step = 4 }"  label="Fine" />
+            <q-btn flat @click="step = 2" color="primary" label="Indietro" class="q-ml-sm" />
         </q-stepper-navigation>
+      </q-step>
+
+       <q-step
+        :name="4"
+        title="Fine"
+        icon="filter_5"
+        :header-nav="step > 4"
+        >
+          <h3>Complimenti!</h3>
+          <h4>I tuoi coupon verranno subito distribuiti dagli altri negozi del club.</h4>
       </q-step>
     </q-stepper>
   </div>
