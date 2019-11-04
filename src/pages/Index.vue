@@ -19,7 +19,7 @@
 
         <q-form class="q-gutter-lg">
           <h2>Benvenuto in Olivetti Club!</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem labore sequi delectus molestias distinctio explicabo optio odio autem rerum at!</p>
+          <p>Registra il tuo negozio e genera i coupon, così verranno distribuiti dagli altri commercianti e i loro clienti verranno a trovarti.</p>
         </q-form>
 
         <q-stepper-navigation>
@@ -34,6 +34,8 @@
         :done="step > 1"
         :header-nav="step > 1"
         >
+
+        <p class="text-body1 text-weight-medium">Inserisci i dati del tuo negozio, serviranno per farti conoscere alle persone più vicine a te.</p>
 
         <q-form class="q-gutter-lg">
           <div class="q-gutter-xl row justify-evenly">
@@ -90,11 +92,12 @@
       <q-step
         :name="2"
         title="Crea i tuoi primi coupon"
-        caption="Facoltativo"
         icon="filter_3"
         :done="step > 2"
         :header-nav="step > 2"
         >
+
+        <p class="text-body1 text-weight-medium">Crea i tuoi coupon, scegli quanti distribuire e che valore hanno. Ad esempio "3 coupon per una bibita omaggio se compri una pizza"</p>
 
         <div v-for="idx in coupons.length" v-bind:key="idx">
           <CouponField v-model="coupons[idx-1]" />
@@ -122,6 +125,8 @@
         icon="filter_4"
         :header-nav="step > 3"
         >
+
+      <p class="text-body1 text-weight-medium">Controlla di aver inserito le informazioni corrette e manda i coupon ai membri del club! </p>
 
         <h3>Conferma i tuoi dati</h3>
         <p><strong>Nome attività</strong>: {{ name }}</p>
