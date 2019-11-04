@@ -38,9 +38,10 @@
         <p class="text-body1 text-weight-medium">Inserisci i dati del tuo negozio, serviranno per farti conoscere alle persone più vicine a te.</p>
 
         <q-form class="q-gutter-lg">
-          <div class="q-gutter-xl row justify-evenly">
+          <div class="row ">
             <q-input
-            size="40"
+              class="col-sm-6 q-pr-sm"
+              size="40"
               filled
               v-model="name"
               label="Nome attività"
@@ -50,7 +51,8 @@
               />
 
             <q-input
-            size="40"
+              class="col-sm-6"
+              size="40"
               filled
               v-model="vatNumber"
               label="Partita IVA"
@@ -60,9 +62,10 @@
               />
           </div>
 
-          <div class="q-gutter-xl row justify-evenly">
+          <div class="row">
             <q-input
-            size="40"
+              class="col-sm-6 q-pr-sm"
+              size="40"
               filled
               v-model="address"
               label="Indirizzo"
@@ -72,13 +75,14 @@
               />
 
             <q-input
-            size="40"
+              class="col-sm-6"
+              size="40"
               filled
               v-model="ateco"
               label="Codice ATECO"
               hint="es. 10.71.10"
               lazy-rules
-              :rules="[ val => val !== null && val !== '' || 'Inserisci il tuo indirizzo' ]"
+              :rules="[ val => val !== null && val !== '' || 'Inserisci il tuo ATECO' ]"
               />
           </div>
 
