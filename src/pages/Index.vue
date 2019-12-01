@@ -146,7 +146,7 @@
         </div>
 
         <q-stepper-navigation>
-          <q-btn color="primary" @click="() => { done3 = true; step = 4 }"  label="Fine" />
+          <q-btn color="primary" @click="completeCouponCreation"  label="Fine" />
             <q-btn flat @click="step = 2" color="primary" label="Indietro" class="q-ml-sm" />
         </q-stepper-navigation>
       </q-step>
@@ -166,10 +166,47 @@
 
 <script>
 import CouponField from '../components/CouponField'
+import axios from 'axios'
+// eslint-disable-next-line no-unused-vars
+const httpClient = axios.create({
+  baseURL: 'http://localhost:5000'
+})
 
 export default {
   name: 'PageIndex',
   components: { CouponField },
+  methods: {
+    async completeCouponCreation () {
+      this.done3 = true
+      this.step = 4
+
+      await this.createMerchant()
+      await this.createCoupons()
+    },
+
+    async createMerchant () {
+      console.log('sending request', this.name, this.address, this.ateco, this.vatNumber)
+      await httpClient.post('/merchants', { name: this.name, vat_number: this.vatNumber, ateco: this.ateco, address: this.address })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
+    async createCoupons () {
+      console.log(this.coupons)
+      this.coupons.forEach(coupon => {
+        httpClient.post('/coupons', { merchant: this.name, description: coupon.description, count: coupon.count })
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      })
+    }
+  },
   data () {
     return {
       step: 0,
