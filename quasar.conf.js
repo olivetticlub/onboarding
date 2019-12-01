@@ -60,6 +60,7 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
+      env: { BACKEND_URL: JSON.stringify(process.env.BACKEND_URL) },
       // vueRouterMode: 'history',
       // showProgress: false,
       // gzip: true,

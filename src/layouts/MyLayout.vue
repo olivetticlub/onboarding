@@ -24,11 +24,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
-const httpClient = axios.create({
-  baseURL: 'http://localhost:5000'
-})
 
 export default {
   name: 'MyLayout',
@@ -41,7 +36,7 @@ export default {
   methods: {
     resetDb () {
       var self = this
-      httpClient.get('/reset')
+      this.$httpClient.get('/reset')
         .then(function (response) {
           self.$q.notify({
             message: 'Database resettato',

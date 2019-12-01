@@ -166,11 +166,6 @@
 
 <script>
 import CouponField from '../components/CouponField'
-import axios from 'axios'
-// eslint-disable-next-line no-unused-vars
-const httpClient = axios.create({
-  baseURL: 'http://localhost:5000'
-})
 
 export default {
   name: 'PageIndex',
@@ -186,7 +181,7 @@ export default {
 
     async createMerchant () {
       console.log('sending request', this.name, this.address, this.ateco, this.vatNumber)
-      await httpClient.post('/merchants', { name: this.name, vat_number: this.vatNumber, ateco: this.ateco, address: this.address })
+      await this.$httpClient.post('/merchants', { name: this.name, vat_number: this.vatNumber, ateco: this.ateco, address: this.address })
         .then(function (response) {
           console.log(response)
         })
@@ -197,7 +192,7 @@ export default {
     async createCoupons () {
       console.log(this.coupons)
       this.coupons.forEach(coupon => {
-        httpClient.post('/coupons', { merchant: this.name, description: coupon.description, count: coupon.count })
+        this.$httpClient.post('/coupons', { merchant: this.name, description: coupon.description, count: coupon.count })
           .then(function (response) {
             console.log(response)
           })
